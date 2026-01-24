@@ -1,0 +1,12 @@
+.tags{
+  display: flex;
+  gap: .5rem;
+}
+
+.tagsCategory{
+  color: #06c;
+  border: 1px solid #06c;
+  padding: .2rem .4rem;
+  border-radius: .2rem;
+  font-size: .8rem;
+}

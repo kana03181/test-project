@@ -1,0 +1,23 @@
+.headerLogo{
+  & h1{
+    font-size: 1rem;
+  }
+}
+
+.headerInner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  background-color: #333;
+  color: #fff;
+}
+
+.headerLogoLink{
+  color: #fff;
+  font-size: 1rem;
+}
+
+.headerNavListItem{
+  font-weight: 700;
+}
