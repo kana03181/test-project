@@ -1,12 +1,12 @@
-import ArticleItems from "./ArticleItems";
-import "./ArticleList.css";
+import ArticleItem from "./ArticleItem";
+import components from "./components/Article/Article.module.css";
 
 export default function ArticleList ({src}) {
   return (
-    <div className="article">
+    <div className={components.article}>
       {src.map(post => (
-        <article className="articleContents" key={post.id} >
-            <ArticleItems post={post}/>
+        <article className={components.contents} key={post.id} >
+          <ArticleItem post={post}/>
         </article>
       ))}
     </div>

@@ -1,4 +1,4 @@
-.headerLogo{
+.logo{
   & h1{
     font-size: 1rem;
   }
@@ -13,11 +13,11 @@
   color: #fff;
 }
 
-.headerLogoLink{
+.logoLink{
   color: #fff;
   font-size: 1rem;
 }
 
-.headerNavListItem{
+.navListItem{
   font-weight: 700;
 }

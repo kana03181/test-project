@@ -1,4 +1,4 @@
-import "./ArticleDate.css";
+import components from "./components/Article/Article.module.css";
 
 export default function ArticleDate({ createdAt }) {
 
@@ -7,7 +7,7 @@ export default function ArticleDate({ createdAt }) {
   const formatted = date.toLocaleDateString("ja-JP", { year: "numeric", month: "numeric", day: "numeric" });
 
   return (
-    <p className="articleDate">
+    <p className={components.date}>
       <time dateTime={formatted}>{formatted}</time>
     </p>
   );
