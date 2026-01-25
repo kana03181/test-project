@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import posts from "./data/posts";
 import ArticleList from "./ArticleList.jsx";
-import './App.css'
+import "./App.css"
+import "./styles/global/global.css";
 import components from "./components/Header/Header.module.css";
 
 function App() {
