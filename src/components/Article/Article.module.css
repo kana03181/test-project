@@ -53,3 +53,10 @@
   -webkit-line-clamp: 2; /* 表示したい行数 */
   -webkit-box-orient: vertical;
 }
+
+/* 詳細ページ用 */
+.full{
+  overflow: visible;
+  display: block;
+  -webkit-line-clamp: unset;
+}

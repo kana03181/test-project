@@ -1,4 +1,4 @@
-import components from "./components/Article/Article.module.css";
+import components from "./Article.module.css";
 
 export default function ArticleTags({categories}) {
   return (
