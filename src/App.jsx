@@ -4,7 +4,7 @@ import ArticleList from "./components/Article/ArticleList";
 import "./App.css"
 import "./styles/global/global.css";
 import components from "./components/Header/Header.module.css";
-import Posts from "./page/posts/posts";
+import Posts from "./page/post/post";
 
 function App() {
   return (

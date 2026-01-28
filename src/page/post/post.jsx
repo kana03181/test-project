@@ -5,7 +5,7 @@ import ArticleTitle from "../../components/Article/ArticleTitle";
 import ArticleContent from "../../components/Article/ArticleContent";
 import posts from "../../data/posts";
 import components from "../../components/Article/Article.module.css";
-import postsStyles from "./posts.module.css";
+import postStyles from "./post.module.css";
 
 export default function Posts() {
   const { id } = useParams();
@@ -19,13 +19,13 @@ export default function Posts() {
 
   return (
     <article className={components.article}>
-      <div className={postsStyles.container}>
-        <div className={postsStyles.contentHeader}>
-          <figure className={postsStyles.thumbnail}>
+      <div className={postStyles.container}>
+        <div className={postStyles.contentHeader}>
+          <figure className={postStyles.thumbnail}>
             <img src={post.thumbnailUrl} alt={post.title} />
           </figure>
         </div>
-        <div className={postsStyles.contentMain}>
+        <div className={postStyles.contentMain}>
           <div className={components.header}>
             <ArticleDate createdAt={post.createdAt} />
             <ArticleTags categories={post.categories} />
