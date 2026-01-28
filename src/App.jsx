@@ -1,35 +1,37 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import posts from "./data/posts";
-import ArticleList from "./ArticleList.jsx";
+import ArticleList from "./components/Article/ArticleList";
 import "./App.css"
 import "./styles/global/global.css";
 import components from "./components/Header/Header.module.css";
+import Posts from "./page/posts/posts";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <BrowserRouter>
       <header className={components.header}>
         <div className={components.headerInner}>
           <div className={components.logo}>
-            <a className={components.logoLink} href="/">
+            <Link to="/" className={components.logoLink}>
               <h1>Blog</h1>
-            </a>
+            </Link>
           </div>
           <nav className={components.nav}>
             <div className={components.navInner}>
               <ul className={components.navList}>
-                <li className={components.navListItem}><a href="#">お問い合わせ</a></li>
+                <li className={components.navListItem}><Link to="#">お問い合わせ</Link></li>
               </ul>
             </div>
           </nav>
         </div>
       </header>
       <main>
-        <ArticleList src={posts} />
+        <Routes>
+          <Route path="/" element={<ArticleList src={posts} />} />
+          <Route path="/posts/:id" element={<Posts />} />
+        </Routes>
       </main>
-    </>
+    </BrowserRouter>
   )
 }
 
