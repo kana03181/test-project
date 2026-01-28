@@ -4,7 +4,7 @@ import ArticleList from "./components/Article/ArticleList";
 import "./App.css"
 import "./styles/global/global.css";
 import components from "./components/Header/Header.module.css";
-import Posts from "./page/post/post";
+import Post from "./page/post/post";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<ArticleList src={posts} />} />
-          <Route path="/posts/:id" element={<Posts />} />
+          <Route path="/posts/:id" element={<Post />} />
         </Routes>
       </main>
     </BrowserRouter>

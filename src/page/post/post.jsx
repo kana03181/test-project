@@ -7,7 +7,7 @@ import posts from "../../data/posts";
 import components from "../../components/Article/Article.module.css";
 import postStyles from "./post.module.css";
 
-export default function Posts() {
+export default function Post() {
   const { id } = useParams();
   const postId = Number(id);
 
