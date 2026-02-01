@@ -1,20 +1,66 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ArticleTags from "../../components/Article/ArticleTags";
 import ArticleDate from "../../components/Article/ArticleDate";
 import ArticleTitle from "../../components/Article/ArticleTitle";
 import ArticleContent from "../../components/Article/ArticleContent";
-import posts from "../../data/posts";
 import components from "../../components/Article/Article.module.css";
 import postStyles from "./post.module.css";
 
 export default function Post() {
   const { id } = useParams();
-  const postId = Number(id);
 
-  const post = posts.find(p => p.id === postId);
+  const [post, setPost] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetcher = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const res = await fetch(`https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}`);
+
+        if (!res.ok) {
+          throw new Error("記事の取得に失敗しました");
+        }
+
+        const data = await res.json();
+        setPost(data.post);
+
+      } catch (err) {
+        setError(err.message);
+
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetcher();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div>
+        <p>読み込み中...</p>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div>
+        <p>エラー：{error}</p>
+      </div>
+    )
+  }
 
   if (!post) {
-    return <p>この記事は見つかりません</p>
+    return (
+      <div>
+        <p>記事が見つかりません</p>
+      </div>
+    )
   }
 
   return (
