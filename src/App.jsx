@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import posts from "./data/posts";
 import ArticleList from "./components/Article/ArticleList";
 import "./App.css"
@@ -7,6 +7,7 @@ import components from "./components/Header/Header.module.css";
 import Post from "./page/post/post";
 
 function App() {
+
   return (
     <BrowserRouter>
       <header className={components.header}>
