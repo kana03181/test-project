@@ -73,8 +73,6 @@ export default function Contact() {
     } finally {
       setIsSubmitting(false);
     }
-
-
   }
 
   const handleClear = () => {
@@ -110,8 +108,6 @@ export default function Contact() {
           label="本文"
           id = "message"
           name="message"
-          cols={30}
-          rows={8}
           value={message}
           disabled={isSubmitting}
           onChange={(e) => setMessage(e.target.value)}

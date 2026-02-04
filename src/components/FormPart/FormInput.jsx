@@ -2,7 +2,7 @@ import FormItem from "./FormItem";
 import FormStyles from "./FormItem.module.css";
 
 
-export default function FormInput({label, id, name, value, onChange, type="text"}) {
+export default function FormInput({label, id, name, value, onChange, disabled, type="text"}) {
   return (
     <FormItem label={label}>
       <input
@@ -10,6 +10,8 @@ export default function FormInput({label, id, name, value, onChange, type="text"
         name={name}
         value={value}
         onChange={onChange}
+        disabled={disabled}
+        type={type}
         className={FormStyles.textBox}
       />
     </FormItem>
