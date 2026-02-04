@@ -1,35 +1,21 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import posts from "./data/posts";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import ArticleList from "./components/Article/ArticleList";
+import Header from "./components/Header/Header";
 import "./App.css"
 import "./styles/global/global.css";
-import components from "./components/Header/Header.module.css";
 import Post from "./page/post/post";
+import Contact from "./page/contact/contact";
 
 function App() {
 
   return (
     <BrowserRouter>
-      <header className={components.header}>
-        <div className={components.headerInner}>
-          <div className={components.logo}>
-            <Link to="/" className={components.logoLink}>
-              <h1>Blog</h1>
-            </Link>
-          </div>
-          <nav className={components.nav}>
-            <div className={components.navInner}>
-              <ul className={components.navList}>
-                <li className={components.navListItem}><Link to="#">お問い合わせ</Link></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <Header />
       <main>
         <Routes>
-          <Route path="/" element={<ArticleList src={posts} />} />
+          <Route path="/" element={<ArticleList />} />
           <Route path="/posts/:id" element={<Post />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
     </BrowserRouter>

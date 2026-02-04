@@ -15,7 +15,6 @@ export default function ArticleList() {
 
         const res = await fetch("https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts");
 
-
         if (!res.ok) {
           throw new Error("記事が見つかりませんでした");
         }
@@ -56,8 +55,6 @@ export default function ArticleList() {
       </div>
     )
   }
-
-
 
   return (
     <div className={components.article}>
